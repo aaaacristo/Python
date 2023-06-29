@@ -1,0 +1,32 @@
+def calcular_media_calificaciones():
+    calificaciones = []
+    suma_calificaciones = 0
+    cantidad_calificaciones = 0
+
+    # Solicitar las calificaciones
+    while cantidad_calificaciones < 10:
+        calificacion = float(input("Ingrese una calificación (entre 1.0 y 7.0): "))
+        if 1.0 <= calificacion <= 7.0:
+            calificaciones.append(calificacion)
+            suma_calificaciones += calificacion
+            cantidad_calificaciones += 1
+        else:
+            print("La calificacion solo puede estar entre 1.0 y 7.0. pruebe otra vez.")
+
+         # Calcular la media
+    media = suma_calificaciones / cantidad_calificaciones
+
+    # Determinar las calificaciones más altas y más bajas que la media
+    calificaciones_altas = sum(1 for calificacion in calificaciones if calificacion > media)
+    calificaciones_bajas = sum(1 for calificacion in calificaciones if calificacion < media)
+
+    return media, calificaciones_altas, calificaciones_bajas
+
+media, calificaciones_altas, calificaciones_bajas = calcular_media_calificaciones()
+
+print("la media de la calificacion:", media)
+print("Calificacones sobre la media:", calificaciones_altas)
+print("Calificacion bajo la media:", calificaciones_bajas)
+
+
+

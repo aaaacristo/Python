@@ -1,0 +1,22 @@
+def generar_enteros():
+    numeros_divisibles_por_5 = []
+    numeros_impares = []
+    maximo = 30
+    num = 2
+
+    while num < maximo:
+        if num % 5 == 0:
+            numeros_divisibles_por_5.append(num)
+        if num % 2 != 0:
+            numeros_impares.append(num)
+        num += 3
+
+    suma_divisibles_por_5 = sum(numeros_divisibles_por_5)
+    suma_impares = sum(numeros_impares)
+
+    return suma_divisibles_por_5, suma_impares
+
+suma_divisibles, suma_impares = generar_enteros()
+
+print("La suma de los divisibles de 5 son:", suma_divisibles)
+print("La suma de los impares son:", suma_impares)
